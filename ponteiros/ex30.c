@@ -7,3 +7,14 @@ p = x ;
 p r i n t f (”%d ” , ∗p ) ;
 r e t u r n 0 ;
 }*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int x, *p;
+    x = 10;
+    p = x;
+    printf("%d\n", *p);
+    return 0;
+}

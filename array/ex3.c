@@ -4,22 +4,27 @@ alto. Mostre o n´umero do aluno mais baixo e do mais alto, juntamente com suas 
 #include <stdio.h>
 #include <stdlib.h>
 int main(){
-    int i, vetA[50], vetB[50], vetC[50];
-    for(i=0;i<50;i++){
-        printf("Digite o %d valor do vetor A: ", i+1);
-        scanf("%d", &vetA[i]);
+    int i, n, aluno, maior, menor;
+    float altura, maior_altura, menor_altura;
+    printf("Digite o numero do aluno e sua altura: ");
+    scanf("%d %f", &aluno, &altura);
+    maior = aluno;
+    menor = aluno;
+    maior_altura = altura;
+    menor_altura = altura;
+    for(i = 1; i < 50; i++){
+        printf("Digite o numero do aluno e sua altura: ");
+        scanf("%d %f", &aluno, &altura);
+        if(altura > maior_altura){
+            maior_altura = altura;
+            maior = aluno;
+        }
+        if(altura < menor_altura){
+            menor_altura = altura;
+            menor = aluno;
+        }
     }
-    for(i=0;i<50;i++){
-        printf("Digite o %d valor do vetor B: ", i+1);
-        scanf("%d", &vetB[i]);
-    }
-    for(i=0;i<50;i++){
-        vetC[i] = vetA[i] - vetB[i];
-    }
-    for(i=0;i<50;i++){
-        printf("%d ", vetC[i]);
-    }
-    printf("\n");
-    system("pause");
+    printf("O aluno mais alto e o %d com %.2f metros\n", maior, maior_altura);
+    printf("O aluno mais baixo e o %d com %.2f metros\n", menor, menor_altura);
     return 0;
 }

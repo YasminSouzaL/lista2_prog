@@ -25,6 +25,5 @@ int main(){
         printf("%d ", vetB[i]);
     }
     printf("\n");
-    system("pause");
     return 0;
 }

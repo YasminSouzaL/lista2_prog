@@ -29,6 +29,5 @@ int main(){
     for(i=0;i<5;i++){
         printf("O aluno %d acertou %d questoes.\n", i+1, vetA[i]);
     }
-    system("pause");
     return 0;
 }

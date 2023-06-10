@@ -1,30 +1,34 @@
 /*Fa¸ca um programa que leia 50 conjuntos de dois valores, o primeiro representando o n´umero do
 aluno e o segundo representando a sua altura em metros. Encontre o aluno mais baixo e o mais
 alto. Mostre o n´umero do aluno mais baixo e do mais alto, juntamente com suas alturas.*/
+
 #include <stdio.h>
 #include <stdlib.h>
 int main(){
-    int i, n, aluno, maior, menor;
-    float altura, maior_altura, menor_altura;
-    printf("Digite o numero do aluno e sua altura: ");
-    scanf("%d %f", &aluno, &altura);
-    maior = aluno;
-    menor = aluno;
-    maior_altura = altura;
-    menor_altura = altura;
-    for(i = 1; i < 50; i++){
-        printf("Digite o numero do aluno e sua altura: ");
-        scanf("%d %f", &aluno, &altura);
-        if(altura > maior_altura){
-            maior_altura = altura;
-            maior = aluno;
+    int i, num, numA, numB;
+    float alt, altA, altB;
+    for(i=0;i<50;i++){
+        printf("Digite o numero do aluno: ");
+        scanf("%d", &num);
+        printf("Digite a altura do aluno: ");
+        scanf("%f", &alt);
+        if(i==0){
+            numA = num;
+            numB = num;
+            altA = alt;
+            altB = alt;
         }
-        if(altura < menor_altura){
-            menor_altura = altura;
-            menor = aluno;
+        if(alt>altA){
+            altA = alt;
+            numA = num;
+        }
+        if(alt<altB){
+            altB = alt;
+            numB = num;
         }
     }
-    printf("O aluno mais alto e o %d com %.2f metros\n", maior, maior_altura);
-    printf("O aluno mais baixo e o %d com %.2f metros\n", menor, menor_altura);
+    printf("O aluno mais alto e o %d com %.2f metros.\n", numA, altA);
+    printf("O aluno mais baixo e o %d com %.2f metros.\n", numB, altB);
+    system("pause");
     return 0;
 }

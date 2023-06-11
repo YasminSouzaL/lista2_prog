@@ -1,5 +1,6 @@
 /*Fa¸ca um programa que leia duas strings A e B. Determine quantas vezes a string A ocorre na
-string B. (N˜ao utilize a fun¸c˜ao strcmp())*/
+
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -23,6 +24,5 @@ int main(){
         }
     }
     printf("A string A ocorre %d vezes na string B\n", cont);
-    system("pause");
     return 0;
 }

@@ -15,6 +15,5 @@ int main(){
         }
     }
     printf("A frase possui %d espacos\n", cont);
-    system("pause");
     return 0;
 }

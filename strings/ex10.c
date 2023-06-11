@@ -8,6 +8,7 @@ int main(){
     char s[100];
     printf("Digite uma frase: ");
     gets(s);
+    getchar();
     printf("Digite o valor de i: ");
     scanf("%d", &i);
     printf("Digite o valor de j: ");

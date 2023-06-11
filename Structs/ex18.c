@@ -10,44 +10,64 @@ zero*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-struct produto{
+
+struct produto {
     int codigo;
-    char nome[15];
+    char nome[16];
     float preco;
     int quantidade;
 };
-int main(){
+
+int main() {
     struct produto produtos[5];
-    for(int i = 0; i < 5; i++){
-        printf("Digite o codigo do produto %d: ", i+1);
+
+    for (int i = 0; i < 5; i++) {
+        printf("Digite o codigo do produto %d: ", i + 1);
         scanf("%d", &produtos[i].codigo);
-        printf("Digite o nome do produto %d: ", i+1);
+
+        printf("Digite o nome do produto %d: ", i + 1);
         scanf("%s", produtos[i].nome);
-        printf("Digite o preco do produto %d: ", i+1);
+
+        printf("Digite o preco do produto %d: ", i + 1);
         scanf("%f", &produtos[i].preco);
-        printf("Digite a quantidade do produto %d: ", i+1);
+
+        printf("Digite a quantidade do produto %d: ", i + 1);
         scanf("%d", &produtos[i].quantidade);
     }
+
     int codigo;
     int quantidade;
-    while(1){
+
+    while (1) {
         printf("Digite o codigo do produto: ");
         scanf("%d", &codigo);
-        if(codigo <= 0){
+
+        if (codigo <= 0) {
             break;
         }
+
         printf("Digite a quantidade do produto: ");
         scanf("%d", &quantidade);
-        for(int i = 0; i < 5; i++){
-            if(produtos[i].codigo == codigo){
-                if(produtos[i].quantidade >= quantidade){
+
+        int encontrado = 0;
+
+        for (int i = 0; i < 5; i++) {
+            if (produtos[i].codigo == codigo) {
+                if (produtos[i].quantidade >= quantidade) {
                     produtos[i].quantidade -= quantidade;
                     printf("Pedido atendido\n");
-                }else{
+                } else {
                     printf("Nao ha estoque suficiente\n");
                 }
+                encontrado = 1;
+                break;
             }
         }
+
+        if (!encontrado) {
+            printf("Produto nao encontrado\n");
+        }
     }
+
     return 0;
 }

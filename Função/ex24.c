@@ -11,13 +11,15 @@ x++++
 #include <stdlib.h>
 
 int quadrado(int x){
-    int i, j;
-    for(i = 0; i < x; i++){
-        for(j = 0; j < x; j++){
-            if(i == j)
-                printf("x");
-            else
+    int i,j;
+    for(i=0; i<x; i++){
+        for(j=0; j<x; j++){
+            if(i==j){
+                printf("X");
+            }
+            else{
                 printf("+");
+            }
         }
         printf("\n");
     }
@@ -25,8 +27,12 @@ int quadrado(int x){
 
 int main(){
     int n;
-    printf("Digite um numero inteiro: ");
-    scanf("%d", &n);
-    quadrado(n);
+    printf("Digite o valor:");
+    scanf("%d",&n);
+    printf("\n");
+    if(n>0){
+        quadrado(n);
+    }
+    
     return 0;
 }

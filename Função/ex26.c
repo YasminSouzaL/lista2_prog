@@ -13,18 +13,18 @@ Exemplo: sqrt(81) = 9 pow(2, 4) = 16*/
 #include <stdlib.h>
 #include <math.h>
 
-struct ponto{
+struct ponto {
     float x;
     float y;
 };
 
-float distancia(struct ponto p1, struct ponto p2){
+float distancia(struct ponto p1, struct ponto p2) {
     float dist;
     dist = sqrt(pow(p1.x - p2.x, 2) + pow(p1.y - p2.y, 2));
     return dist;
 }
 
-int main(){
+int main() {
     struct ponto p1, p2;
     printf("Digite as coordenadas do ponto 1: ");
     scanf("%f %f", &p1.x, &p1.y);

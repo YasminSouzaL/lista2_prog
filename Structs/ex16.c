@@ -31,6 +31,7 @@ struct aluno maiorNota1(struct aluno *alunos){
     return maior;
 }
 
+
 int main(){
     struct aluno alunos[5];
     for(int i = 0; i < 5; i++){

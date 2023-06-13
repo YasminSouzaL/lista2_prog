@@ -6,80 +6,73 @@ prova.
 (c) Encontre o aluno com maior m´edia geral.
 (d) Encontre o aluno com menor m´edia geral.
 (e) Para cada aluno diga se ele foi aprovado ou reprovado, considerando o valor 60 para
-aprova¸c˜ao*/
+aprova¸c˜ao
+
+sem função com 2 for */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-struct aluno {
+struct aluno{
     int matricula;
-    char nome[50];
+    char nome[30];
     float nota1;
     float nota2;
     float nota3;
-    float media;
 };
 
-struct aluno encontrarMaiorNota1(struct aluno *alunos) {
-    struct aluno maior;
-    maior.nota1 = 0;
-    for (int i = 0; i < 5; i++) {
-        if (alunos[i].nota1 > maior.nota1) {
-            maior = alunos[i];
-        }
-    }
-    return maior;
-}
-
-void processarAlunos(struct aluno *alunos) {
-    struct aluno maior = encontrarMaiorNota1(alunos);
-    printf("Aluno com maior nota na primeira prova: %s\n", maior.nome);
-
-    struct aluno maiorMedia;
-    maiorMedia.media = 0;
-    for (int i = 0; i < 5; i++) {
-        if (alunos[i].media > maiorMedia.media) {
-            maiorMedia = alunos[i];
-        }
-    }
-    printf("Aluno com maior media: %s\n", maiorMedia.nome);
-
-    struct aluno menorMedia;
-    menorMedia.media = 10;
-    for (int i = 0; i < 5; i++) {
-        if (alunos[i].media < menorMedia.media) {
-            menorMedia = alunos[i];
-        }
-    }
-    printf("Aluno com menor media: %s\n", menorMedia.nome);
-
-    for (int i = 0; i < 5; i++) {
-        if (alunos[i].media >= 6) {
-            printf("Aluno %s aprovado\n", alunos[i].nome);
-        } else {
-            printf("Aluno %s reprovado\n", alunos[i].nome);
-        }
-    }
-}
-
-int main() {
+int main(){
     struct aluno alunos[5];
-    for (int i = 0; i < 5; i++) {
-        printf("Digite a matricula do aluno %d: ", i + 1);
+    int i, j, maiorNota1 = 0, maiorMedia = 0, menorMedia = 0;
+    float media = 0;
+
+    for(i = 0; i < 5; i++){
+        printf("Digite a matricula do aluno %d: ", i+1);
         scanf("%d", &alunos[i].matricula);
-        printf("Digite o nome do aluno %d: ", i + 1);
+        printf("Digite o nome do aluno %d: ", i+1);
         scanf("%s", alunos[i].nome);
-        printf("Digite a nota 1 do aluno %d: ", i + 1);
+        printf("Digite a nota 1 do aluno %d: ", i+1);
         scanf("%f", &alunos[i].nota1);
-        printf("Digite a nota 2 do aluno %d: ", i + 1);
+        printf("Digite a nota 2 do aluno %d: ", i+1);
         scanf("%f", &alunos[i].nota2);
-        printf("Digite a nota 3 do aluno %d: ", i + 1);
+        printf("Digite a nota 3 do aluno %d: ", i+1);
         scanf("%f", &alunos[i].nota3);
-        alunos[i].media = (alunos[i].nota1 + alunos[i].nota2 + alunos[i].nota3) / 3;
+        printf("\n");
     }
 
-    processarAlunos(alunos);
+    for(i = 0; i < 5; i++){
+        if(alunos[i].nota1 > alunos[maiorNota1].nota1){
+            maiorNota1 = i;
+        }
+    }
+
+    for(i = 0; i < 5; i++){
+        media = (alunos[i].nota1 + alunos[i].nota2 + alunos[i].nota3) / 3;
+        if(media > alunos[maiorMedia].nota1){
+            maiorMedia = i;
+        }
+    }
+
+    for(i = 0; i < 5; i++){
+        media = (alunos[i].nota1 + alunos[i].nota2 + alunos[i].nota3) / 3;
+        if(media < alunos[menorMedia].nota1){
+            menorMedia = i;
+        }
+    }
+
+    for(i = 0; i < 5; i++){
+        media = (alunos[i].nota1 + alunos[i].nota2 + alunos[i].nota3) / 3;
+        if(media >= 60){
+            printf("O aluno %s foi aprovado com media %.2f\n", alunos[i].nome, media);
+        }else{
+            printf("O aluno %s foi reprovado com media %.2f\n", alunos[i].nome, media);
+        }
+    }
+
+    printf("\nO aluno com maior nota na primeira prova foi %s com nota %.2f\n", alunos[maiorNota1].nome, alunos[maiorNota1].nota1);
+    printf("O aluno com maior media geral foi %s com media %.2f\n", alunos[maiorMedia].nome, (alunos[maiorMedia].nota1 + alunos[maiorMedia].nota2 + alunos[maiorMedia].nota3) / 3);
+    
 
     return 0;
 }

@@ -6,7 +6,8 @@ prova.
 (c) Encontre o aluno com maior m´edia geral.
 (d) Encontre o aluno com menor m´edia geral.
 (e) Para cada aluno diga se ele foi aprovado ou reprovado, considerando o valor 60 para
-aprova¸c˜ao*/
+aprovação*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

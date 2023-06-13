@@ -3,9 +3,9 @@
 c´odigo (inteiro), nome (m´aximo de 15 caracteres), pre¸co e quantidade em estoque.
 (b) Leia um pedido, composto por um c´odigo de produto e a quantidade que que o usu´ario
 deseja comprar. Localize este c´odigo no vetor e, se houver quantidade suficiente para
-atender o pedido integralmente, atualize o estoque e informe ao usu´ario. Caso n˜ao haja,
+atender o pedido integralmente, atualize o estoque e informe ao usu´ario. Caso não haja,
 avise ao usu´ario que n˜ao h´a estoque suficiente.
-(c) Repita as leituras dos pedidos at´e que o usu´ario digite um c´odigo de produto negativo ou
+(c) Repita as leituras dos pedidos at´e que o usuário digite um c´odigo de produto negativo ou
 zero*/
 #include <stdio.h>
 #include <stdlib.h>

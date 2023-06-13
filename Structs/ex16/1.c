@@ -7,8 +7,7 @@ prova.
 (d) Encontre o aluno com menor m´edia geral.
 (e) Para cada aluno diga se ele foi aprovado ou reprovado, considerando o valor 60 para
 aprova¸c˜ao
-
-sem função com 2 for */
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
